@@ -54,8 +54,8 @@ function mHandler () {
 
 function spaceHandler ()
 {
-    scoreDisplay.kill();
-    game.add.text (375, 375, score)
+    scoreDisplay.destroy(score.toString());
+    scoreDisplay = game.add.text (370, 370, score.toString())
 }
 
 
@@ -88,7 +88,7 @@ function create() {
     var y = 200;
     player = game.add.sprite(x, y, "Superman");
 
-    scoreDisplay = game.add.text (375, 375, score);
+    scoreDisplay = game.add.text (370, 370, score.toString());
 
     game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(spaceHandler);
     game.input.keyboard.addKey(Phaser.Keyboard.B).onDown.add(bHandler);
